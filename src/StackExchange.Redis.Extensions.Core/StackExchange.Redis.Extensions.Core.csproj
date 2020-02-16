@@ -23,7 +23,7 @@ To store complex data It requires one of the following implementations:
 		<AssemblyName>StackExchange.Redis.Extensions.Core</AssemblyName>
 		<AssemblyOriginatorKeyFile>..\..\StackExchange.Redis.Extensions.Core.snk</AssemblyOriginatorKeyFile>
 		<SignAssembly>true</SignAssembly>
-		<PackageId>StackExchange.Redis.Extensions.Core</PackageId>
+		<PackageId>StackExchange.Redis.Extensions.Core-Unofficial</PackageId>
 		<PackageProjectUrl>https://github.com/imperugo/StackExchange.Redis.Extensions</PackageProjectUrl>
 		<LangVersion>latest</LangVersion>
 		<RepositoryUrl>https://github.com/imperugo/StackExchange.Redis.Extensions</RepositoryUrl>
@@ -60,6 +60,6 @@ To store complex data It requires one of the following implementations:
 
 
 	<ItemGroup>
-		<PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+		<PackageReference Include="StackExchange.Redis" Version="2.0.519" />
 	</ItemGroup>
 </Project>
