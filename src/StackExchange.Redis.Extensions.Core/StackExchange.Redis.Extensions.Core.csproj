@@ -60,6 +60,7 @@ To store complex data It requires one of the following implementations:
 
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.1" />
 		<PackageReference Include="StackExchange.Redis" Version="2.0.519" />
 	</ItemGroup>
 </Project>

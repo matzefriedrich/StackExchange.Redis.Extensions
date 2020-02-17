@@ -17,6 +17,8 @@ using static System.Linq.Enumerable;
 
 namespace StackExchange.Redis.Extensions.Tests
 {
+	using Microsoft.Extensions.Logging.Abstractions;
+
 	[Collection("Redis")]
 	public abstract class CacheClientTestBase : IDisposable
 	{
@@ -48,7 +50,7 @@ namespace StackExchange.Redis.Extensions.Tests
 			};
 
 			Serializer = serializer;
-			ConnectionPoolManager = new RedisCacheConnectionPoolManager(redisConfiguration);
+			ConnectionPoolManager = new RedisCacheConnectionPoolManager(new NullLogger<RedisCacheConnectionPoolManager>(), redisConfiguration);
 			Sut = new RedisCacheClient(ConnectionPoolManager, Serializer, redisConfiguration);
 			Db = Sut.GetDbFromConfiguration().Database;
 		}

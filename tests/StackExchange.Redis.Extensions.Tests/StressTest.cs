@@ -12,6 +12,8 @@ using Xunit;
 using Xunit.Abstractions;
 namespace StackExchange.Redis.Extensions.Tests
 {
+	using Microsoft.Extensions.Logging.Abstractions;
+
 	public class StressTest : IDisposable
 	{
 		private readonly ICacheClient sut;
@@ -95,7 +97,7 @@ namespace StackExchange.Redis.Extensions.Tests
         [Fact(Skip = "Is a performance test, must be run manually")]
         public async Task Open_Tons_of_concurrent_connections()
         {
-            var sut = new RedisCacheConnectionPoolManager(new RedisConfiguration()
+            var sut = new RedisCacheConnectionPoolManager(new NullLogger<RedisCacheConnectionPoolManager>(), new RedisConfiguration()
 			{
 				AbortOnConnectFail = false,
 				Hosts = new RedisHost[]
